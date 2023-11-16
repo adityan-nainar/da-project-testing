@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 
 st.title('DA Project :smile:')
 
-df = pd.read_csv('/workspaces/da-project-testing/BillionairesStatisticsDataset.csv')
+df = pd.read_csv('BillionairesStatisticsDataset.csv')
 
 
 #sidebar
