@@ -21,31 +21,35 @@ st.sidebar.header('Filters here: ')
 # )
 
 container = st.sidebar.container()
-all = st.sidebar.checkbox("Select all countries")
+all = st.sidebar.checkbox("select All")
  
+
 if all:
-    country = container.multiselect("Select one or more options:",
+    country = container.multiselect("Select Countries",
          df['country'].unique(),df['country'].unique())
 else:
-    country = container.multiselect("Select one or more options:",
+    country = container.multiselect("Select Countries",
         df['country'].unique(),default=['India', 'Switzerland'])
-       
+
 # category = st.sidebar.multiselect(
 #     "Select the category: ",
 #     options=df['category'].unique(),
 #     default=df['category'].iloc[1]
 # )
 
+st.sidebar.write('')
+
 container2 = st.sidebar.container()
 all2 = st.sidebar.checkbox("Select all categories")
  
 if all2:
-    category = container2.multiselect("Select one or more options:",
+    category = container2.multiselect("Select Category:",
          df['category'].unique(),df['category'].unique())
 else:
-    category = container2.multiselect("Select one or more options:",
+    category = container2.multiselect("Select Category:",
         df['category'].unique(), default=['Technology'])
   
+st.sidebar.write('')
 
 selfMade = st.sidebar.multiselect(
     "Select selfMade : ",
@@ -53,6 +57,8 @@ selfMade = st.sidebar.multiselect(
     default=df['selfMade'].unique()
 )
 
+
+st.sidebar.write('')
 age = st.sidebar.slider(
     'Select Age range',
     0, 100, (25, 75)
